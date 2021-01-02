@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe 'Sessions' do
   describe 'As a visitor' do
-    describe 'When I visit the root page and click the log in button' do
-      it 'I am taken to the GitHub OAuth page and asked to log in' do
+    describe 'When I visit the root page' do
+      it 'I see a log in button that takes me to the GitHub OAuth page for my app' do
         visit root_path
 
         expect(ENV['CLIENT_ID']).to_not be nil
