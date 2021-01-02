@@ -11,7 +11,6 @@ describe 'As a visitor' do
 
     it 'I see buttons to log in and register with GH OAuth' do
       expect(page).to have_button('Log In with GitHub Account')
-      expect(page).to have_button('Register With GitHub Account')
     end
   end
 end
