@@ -90,7 +90,11 @@ RSpec.configure do |config|
     config.filter_sensitive_data('<CLIENT_ID>') { ENV['CLIENT_ID'] }
     config.filter_sensitive_data('<CLIENT_SECRET>') { ENV['CLIENT_SECRET'] }
     config.filter_sensitive_data('<ACCESS_TOKEN>') do |interaction|
-      JSON.parse(interaction.response.body)['access_token']
+      if JSON.parse(interaction.response.body)['access_token']
+        JSON.parse(interaction.response.body)['access_token']
+      else
+        ENV['ACCESS_TOKEN']
+      end
     end
     config.filter_sensitive_data('token <ACCESS_TOKEN>') do |interaction|
       auth = interaction.request.headers['Authorization']

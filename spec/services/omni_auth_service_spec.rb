@@ -6,7 +6,7 @@ describe 'GitHub Oauth Service' do
       # Code must be retrieved manually from the 'code' param sent in GH Oauth
       # login callback. This code is single use and only lasts 10 minutes, so
       # this must be done every time the cassettes are created.
-      code = '24d1ed1389d66d469bda'
+      code = ENV['TEST_CODE']
       response = OmniAuthService.request_token(code)
 
       expect(response).to be_an(Hash)
