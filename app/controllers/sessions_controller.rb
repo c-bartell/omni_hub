@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    access_token = get_access_token(params[:code])
+    access_token = OmniAuthFacade.access_token(params[:code])
     user_data = get_user_data(access_token)
     user = User.find_or_create_by(uid: user_data[:id])
     user.username = user_data[:login]
@@ -14,10 +14,6 @@ class SessionsController < ApplicationController
   end
 
   private
-
-  def get_access_token(code)
-    OmniAuthService.request_token(code)[:access_token]
-  end
 
   def get_user_data(access_token)
     conn = Faraday.new(
