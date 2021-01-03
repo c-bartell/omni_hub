@@ -1,2 +1,2 @@
 <%= tag.h1 "Welcome to OmniHub!" %>
-<%= button_to "Log In with GitHub Account" %>
+<%= link_to "Log In with GitHub Account", "https://github.com/login/oauth/authorize?client_id=#{ENV['CLIENT_ID']}&scope=repo" %>

@@ -1,0 +1,85 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - token <ACCESS_TOKEN>
+      User-Agent:
+      - Faraday v1.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sun, 03 Jan 2021 20:06:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"e0779f3c1c23ed6f386693f291d62e6795195adc6ccf26bbb57f8e5d0e38b964"
+      Last-Modified:
+      - Sun, 03 Jan 2021 19:34:37 GMT
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - "<CLIENT_ID>"
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4997'
+      X-Ratelimit-Reset:
+      - '1609706078'
+      X-Ratelimit-Used:
+      - '3'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - D4E5:49BF:206F331:55969E8:5FF223BB
+    body:
+      encoding: UTF-8
+      string: '{"login":"c-bartell","id":60277914,"node_id":"MDQ6VXNlcjYwMjc3OTE0","avatar_url":"https://avatars3.githubusercontent.com/u/60277914?v=4","gravatar_id":"","url":"https://api.github.com/users/c-bartell","html_url":"https://github.com/c-bartell","followers_url":"https://api.github.com/users/c-bartell/followers","following_url":"https://api.github.com/users/c-bartell/following{/other_user}","gists_url":"https://api.github.com/users/c-bartell/gists{/gist_id}","starred_url":"https://api.github.com/users/c-bartell/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/c-bartell/subscriptions","organizations_url":"https://api.github.com/users/c-bartell/orgs","repos_url":"https://api.github.com/users/c-bartell/repos","events_url":"https://api.github.com/users/c-bartell/events{/privacy}","received_events_url":"https://api.github.com/users/c-bartell/received_events","type":"User","site_admin":false,"name":"Curtis
+        B","company":null,"blog":"","location":"Denver, CO","email":null,"hireable":true,"bio":"Hi!
+        I''m a back-end engineering student at Turing School of Software and Design.
+        Here, you''ll find the solemn record of my sins against programming.","twitter_username":null,"public_repos":37,"public_gists":2,"followers":5,"following":10,"created_at":"2020-01-24T23:50:12Z","updated_at":"2021-01-03T19:34:37Z"}'
+  recorded_at: Sun, 03 Jan 2021 20:06:19 GMT
+recorded_with: VCR 6.0.0

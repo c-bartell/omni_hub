@@ -83,4 +83,22 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  VCR.configure do |config|
+    config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+    config.hook_into :webmock
+    config.filter_sensitive_data('<CLIENT_ID>') { ENV['CLIENT_ID'] }
+    config.filter_sensitive_data('<CLIENT_SECRET>') { ENV['CLIENT_SECRET'] }
+    config.filter_sensitive_data('<ACCESS_TOKEN>') do |interaction|
+      if JSON.parse(interaction.response.body)['access_token']
+        JSON.parse(interaction.response.body)['access_token']
+      else
+        ENV['ACCESS_TOKEN']
+      end
+    end
+    config.filter_sensitive_data('token <ACCESS_TOKEN>') do |interaction|
+      auth = interaction.request.headers['Authorization']
+      auth.first if auth
+    end
+  end
 end
