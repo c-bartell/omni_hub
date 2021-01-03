@@ -9,7 +9,7 @@ class GitHubService
     private
 
     def conn(access_token)
-      conn = Faraday.new(
+      Faraday.new(
         url: 'https://api.github.com',
         headers: {
           'Authorization': "token #{access_token}"
