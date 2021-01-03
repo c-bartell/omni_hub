@@ -19,6 +19,7 @@ require 'simplecov'
 SimpleCov.start 'rails'
 
 require 'database_cleaner/active_record'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
