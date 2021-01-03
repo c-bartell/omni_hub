@@ -7,8 +7,8 @@ describe 'User login' do
         VCR.use_cassette('oauth_handshake') do
           visit gh_callback_path(code: "24d1ed1389d66d469bda")
 
-          expect(current_url).to eq(dashboard_path)
-          expect(page).to have_content("Welcome c-bartell!")
+          expect(current_path).to eq(dashboard_path)
+          expect(page).to have_content("Welcome, c-bartell!")
         end
       end
     end
