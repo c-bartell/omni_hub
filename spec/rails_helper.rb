@@ -87,5 +87,7 @@ RSpec.configure do |config|
   VCR.configure do |config|
     config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
     config.hook_into :webmock
+    config.filter_sensitive_data('<CLIENT_ID>') { ENV['CLIENT_ID'] }
+    config.filter_sensitive_data('<CLIENT_SECRET>') { ENV['CLIENT_SECRET'] }
   end
 end
