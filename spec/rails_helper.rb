@@ -89,5 +89,12 @@ RSpec.configure do |config|
     config.hook_into :webmock
     config.filter_sensitive_data('<CLIENT_ID>') { ENV['CLIENT_ID'] }
     config.filter_sensitive_data('<CLIENT_SECRET>') { ENV['CLIENT_SECRET'] }
+    config.filter_sensitive_data('<ACCESS_TOKEN>') do |interaction|
+      JSON.parse(interaction.response.body)['access_token']
+    end
+    config.filter_sensitive_data('token <ACCESS_TOKEN>') do |interaction|
+      auth = interaction.request.headers['Authorization']
+      auth.first if auth
+    end
   end
 end
