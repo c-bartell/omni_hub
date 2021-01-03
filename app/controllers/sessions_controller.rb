@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
       url: 'https://github.com',
       headers: {
         'Accept': 'application/json'
-        }
-      )
+      }
+    )
 
     response = conn.post('/login/oauth/access_token') do |req|
       req.params['code'] = params[:code]
@@ -31,7 +31,7 @@ class SessionsController < ApplicationController
     user.uid = data[:id]
     user.token = access_token
     user.save
-    
+
     session[:user_id] = user.id
 
     redirect_to dashboard_path
