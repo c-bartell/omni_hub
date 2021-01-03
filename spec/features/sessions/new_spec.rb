@@ -8,7 +8,7 @@ describe 'User login' do
           # Code must be retrieved manually from the 'code' param sent in GH
           # Oauth login callback. This code is single use and only lasts 10
           # minutes, so this must be done every time the cassettes are created.
-          visit gh_callback_path(code: "24d1ed1389d66d469bda")
+          visit gh_callback_path(code: ENV['TEST_CODE'])
 
           expect(current_path).to eq(dashboard_path)
           expect(page).to have_content("Welcome, c-bartell!")
