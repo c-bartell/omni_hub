@@ -1,1 +1,13 @@
 <%= tag.h1 "Welcome, #{current_user.username}!" %>
+<%= tag.h3 "Public Repos" %>
+<%= tag.ul id: 'public-repos' do %>
+  <% @public_repos.each do |repo| %>
+    <%= tag.li repo[:full_name], class: ['repo', 'public-repo'] %>
+  <% end %>
+<% end %>
+<%= tag.h3 "Private Repos" %>
+<%= tag.ul id: 'private-repos' do %>
+  <% @private_repos.each do |repo| %>
+    <%= tag.li repo[:full_name], class: ['repo', 'private-repo'] %>
+  <% end %>
+<% end %>
