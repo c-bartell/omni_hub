@@ -21,6 +21,7 @@ SimpleCov.add_filter ['app/channels', 'app/jobs', 'app/mailers']
 
 require 'database_cleaner/active_record'
 require 'webmock/rspec'
+require 'rack_session_access/capybara'
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

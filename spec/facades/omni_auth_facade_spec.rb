@@ -9,7 +9,7 @@ describe 'Git Hub OAuth Facade' do
       code = ENV['TEST_CODE']
       access_token = OmniAuthFacade.access_token(code)
 
-      expect(access_token).to eq('<ACCESS_TOKEN>')
+      expect(access_token).to eq(ENV['ACCESS_TOKEN'])
     end
   end
 end

@@ -56,6 +56,7 @@ group :test do
   gem 'database_cleaner-active_record'
   gem 'webmock'
   gem 'vcr'
+  gem 'rack_session_access'
 end
 
 
